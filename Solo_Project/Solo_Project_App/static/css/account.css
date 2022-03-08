@@ -1,0 +1,109 @@
+*{
+    margin:0px;
+    padding:0px;
+}
+
+body{
+    background-image: url('../images/blurrylights.jpg');
+    height: 1000px;
+    width: 1500px;
+    /* overflow: hidden; */
+    opacity: .85;
+    background-attachment: fixed;
+}
+
+#profbut{
+    margin-left: 120px;
+    margin-top: 10px;
+}
+
+#proflabel{
+    margin-left: 80px;
+}
+
+#stateinput{
+    width:432px;
+}
+
+#form1{
+    margin-left: 30px;
+}
+
+#pinfo{
+    margin-left: 30px;
+    margin-bottom: 20px;
+}
+
+h1{
+    margin-left: 30px;
+}
+
+a{
+    text-decoration: none;
+    color: white;
+    margin-top: 20px;
+}
+
+#bio{
+    height: 200px;
+}
+
+#form2{
+    margin-top: 70px;
+}
+
+#sm{
+    margin-left: 30px;
+    margin-bottom: 20px;
+}
+
+#social_media{
+    margin-left: 30px;
+}
+
+.socm{
+    display: flex;
+}
+
+.socm > input{
+    margin-left: 10px;
+}
+
+.card{
+    background-color:rgba(192, 192, 192, 0.555);
+    width: 1300px;
+    padding-left: 30px;
+    padding-right: 30px;
+    height: max-content;
+    margin-left: 120px;
+    border-radius: 30px;
+    padding-top: 10px;
+}
+
+#c_user{
+    display: flex;
+    height: 400px;
+    padding: 30px;
+    justify-content: center;
+    text-align: center;
+    color: white;
+}
+
+
+#port_img{
+    border: solid 10px black;
+    margin-right: 20px;
+}
+
+.c_img{
+    display: block;
+}
+
+#wrapper{
+    margin-bottom: 30px;
+    padding-bottom: 30px;
+}
+
+#portfolioheader{
+    text-align: center;
+}

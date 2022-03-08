@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        {% extends 'basic.html' %}
+        {% block head %}
+        {{ block.super }}
+        {% endblock %}
+    </head>
+    <body>
+        {% block content %}
+        <div id="wrapper">
+            <h1 class="display-3 text-light text-center">Portfolio Exchange</h1>
+            <div class="container">
+                <div class="card_login">
+                    <div class="row">
+                        <div class="col">
+                            <h4 class="text-center mt-4">Join the Community!</h4>
+                            {% if messages %}
+                            <ul class="messages">    
+                                {% for message in messages %}    
+                                    <li {% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>    
+                                {% endfor %}
+                            </ul>
+                            {% endif %}
+                            <form class="reg" action="/user/create" method="POST" enctype="multipart/form-data">
+                                {% csrf_token %}
+                                <div>
+                                    <label for="first_name">First Name</label>
+                                    <input class="form-control" type="text" id="first_name" name="first_name">
+                                </div>
+                                <div>
+                                    <label for="last_name">Last Name</label>
+                                    <input class="form-control" type="text" id="last_name" name="last_name">
+                                </div>
+                                <div>
+                                    <label for="profile_pic">Upload a photo</label>
+                                    <input class="form-control" type="file" id="profile_pic" name="profile_pic">
+                                </div>
+                                <div>
+                                    <label for="city">City</label>
+                                    <input class="form-control" type="text" id="city" name="city">
+                                </div>
+                                <label for="states">State</label>
+                                <select class="form-control" name="states" id="states">
+                                    <option value=""></option>
+                                    <option value="AL">AL</option>
+                                    <option value="AK">AK</option>
+                                    <option value="AZ">AZ</option>
+                                    <option value="AR">AR</option>
+                                    <option value="CA">CA</option>
+                                    <option value="CO">CO</option>
+                                    <option value="CT">CT</option>
+                                    <option value="DE">DE</option>
+                                    <option value="FL">FL</option>
+                                    <option value="GA">GA</option>
+                                    <option value="HI">HI</option>
+                                    <option value="ID">ID</option>
+                                    <option value="IL">IL</option>
+                                    <option value="IN">IN</option>
+                                    <option value="IA">IA</option>
+                                    <option value="KS">KS</option>
+                                    <option value="KY">KY</option>
+                                    <option value="LA">LA</option>
+                                    <option value="ME">ME</option>
+                                    <option value="ND">MD</option>
+                                    <option value="MA">MA</option>
+                                    <option value="MI">MI</option>
+                                    <option value="MN">MN</option>
+                                    <option value="MS">MS</option>
+                                    <option value="MO">MO</option>
+                                    <option value="MT">MT</option>
+                                    <option value="NE">NE</option>
+                                    <option value="NV">NV</option>
+                                    <option value="NH">NH</option>
+                                    <option value="NJ">NJ</option>
+                                    <option value="NM">NM</option>
+                                    <option value="NY">NY</option>
+                                    <option value="NC">NC</option>
+                                    <option value="ND">ND</option>
+                                    <option value="OH">OH</option>
+                                    <option value="OK">OK</option>
+                                    <option value="OR">OR</option>
+                                    <option value="PA">PA</option>
+                                    <option value="RI">RI</option>
+                                    <option value="SC">SC</option>
+                                    <option value="SD">SD</option>
+                                    <option value="TN">TN</option>
+                                    <option value="TX">TX</option>
+                                    <option value="UT">UT</option>
+                                    <option value="VT">VT</option>
+                                    <option value="VA">VA</option>
+                                    <option value="WA">WA</option>
+                                    <option value="WV">WV</option>
+                                    <option value="WI">WI</option>
+                                    <option value="WY">WY</option>
+                                </select>
+                                <label for="email">Email</label>
+                                <input class="form-control" type="email" name="email">
+
+                                <label for="password">Password</label>
+                                <input class="form-control" type="password" name="password">
+
+                                <label for="password_conf">Password Confirmation</label>
+                                <input class="form-control" type="password" name="password_conf">
+                                <br>
+                                <input class="btn btn-primary" type="submit" value="Register">
+                            </form>
+                            <br>
+                        </div>
+                        <div class="col">
+                            <br>
+                            <div id="login">
+                                <h4 class="text-center">Already have an account? LOGIN</h4>
+                                {% if messages_right %}
+                            <ul class="messages">    
+                                {% for message in messages_right %}    
+                                    <li {% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>    
+                                {% endfor %}
+                            </ul>
+                            {% endif %}
+                                <form action="/user/login" method="POST">
+                                    {% csrf_token %}
+                                    <label for="email">Email</label>
+                                    <input class="form-control" type="email" name="email">
+                                    <label for="password">Password</label>
+                                    <input class="form-control" type="password" name="password">
+                                    <br>
+                                    <input class="btn btn-primary" type="submit" value="Login">
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        {% endblock %}
+    </body>
+</html>

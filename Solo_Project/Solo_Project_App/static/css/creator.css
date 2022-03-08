@@ -1,0 +1,76 @@
+*{
+    margin:0px;
+    padding:0px;
+}
+
+body{
+    background-image: url('../images/blurrylights.jpg');
+    height: 1000px;
+    width: 1500px;
+    /* overflow: hidden; */
+    opacity: .85;
+    background-attachment: fixed;
+}
+
+p, h2{
+    color: white;
+}
+
+#pbio{
+    width:600px;
+}
+
+#profpic > img{
+    border: 10px solid black;
+}
+
+#wrapper{
+    padding-left: 30px;
+    padding-top: 20px;
+    padding-bottom: 40px;
+}
+
+#socm{
+    margin-left: 285px;
+}
+
+.card{
+    background-color:rgba(192, 192, 192, 0.555);
+    width: 1300px;
+    padding-left: 30px;
+    padding-right: 30px;
+    height: max-content;
+    margin-left: 120px;
+    border-radius: 30px;
+    padding-top: 10px;
+    padding-bottom: 20px;
+    margin-top: 40px;
+}
+
+#c_user{
+    display: flex;
+    height: 400px;
+    padding: 30px;
+    justify-content: center;
+    text-align: center;
+    color: white;
+}
+
+.c_img{
+    display: block;
+}
+
+#port_img{
+    border: solid 10px black;
+    margin-right: 20px;
+}
+
+#portfolioheader{
+    text-align: center;
+}
+
+a{
+    text-decoration: none;
+    color: white;
+    margin-top: 10px;
+}

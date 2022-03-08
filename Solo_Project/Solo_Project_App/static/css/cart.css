@@ -1,0 +1,63 @@
+*{
+    margin:0px;
+    padding:0px;
+}
+
+
+body{
+    background-image: url('../images/blurrylights.jpg');
+    height: 1000px;
+    width: 1500px;
+    /* overflow: hidden; */
+    opacity: .85;
+    background-attachment: fixed;
+}
+
+.card{
+    background-color:rgba(192, 192, 192, 0.555);
+    width: 1300px;
+    padding-left: 30px;
+    padding-right: 30px;
+    height: max-content;
+    margin-left: 120px;
+    border-radius: 30px;
+    padding-top: 10px;
+    padding-bottom: 20px;
+    margin-top: 40px;
+    color: black;
+}
+
+h1{
+    margin-left: 20px;
+    margin-top: 20px;
+}
+
+a{
+    margin-top: 30px;
+    text-decoration: none;
+    color: white;
+}
+
+img{
+    border: 10px solid black;
+    margin-bottom: 5px;
+}
+
+td{
+    border: 2px solid black;
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+
+table{
+    text-align: center;
+}
+
+#checkbut{
+    text-align: center;
+    margin-top: 10px;
+}
+
+#checkbut > form > input{
+    width: 200px;
+}

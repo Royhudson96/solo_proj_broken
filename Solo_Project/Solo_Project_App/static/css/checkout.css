@@ -1,0 +1,29 @@
+*{
+    margin:0px;
+    padding:0px;
+}
+
+body{
+    background-image: url('../images/blurrylights.jpg');
+    height: 1000px;
+    width: 1500px;
+    /* overflow: hidden; */
+    opacity: .85;
+    background-attachment: fixed;
+}
+
+h3{
+    text-align: center;
+    margin-top: 30px;
+}
+
+p{
+    margin-top: 50px;
+    color: white;
+    text-align: center;
+}
+
+form{
+    text-align: center;
+    margin-top: 40px;
+}
