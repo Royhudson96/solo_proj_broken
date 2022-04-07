@@ -128,7 +128,9 @@ def add_to_cart(request, user_id):
         cart = Cart.objects.create(total_price=0.00, user_id=user.id)
         request.session['cart'] = cart.id
     else:
-        line_items = request.session['line_items']
+        print('cart')
+        # line_items = request.session['line_items']
+        print('cart2')
         total_price = request.session['total_price']
         cart = Cart.objects.get(id=request.session['cart'])
     # item_list makes a list of all the items on the view cart page
@@ -142,14 +144,13 @@ def add_to_cart(request, user_id):
         cart = Cart.objects.get(id=request.session['cart'])
         cart.total_price = total_price
         request.session['cart'] = cart.id
+        line_items = []
         cart.save()
         line_item = CartItem.objects.create(cart = cart, item = item, quantity = request.POST['quantity_ordered'])
         line_items.append(line_item.id)
-
-    
-    request.session['total_price'] = total_price
-    request.session['line_items'] = line_items
-    print(line_items)
+        request.session['total_price'] = total_price
+    # request.session['line_items'] = line_items
+    # print(line_items)
     # this is so we can create a session for the cart the user creates
     return redirect(f'/user/contentcreator/{user_id}')
 
@@ -159,8 +160,9 @@ def remove_from_cart(request, line_id):
     portfolio = Portfolio.objects.get(id=item.item_id)
     # first item on ;ine 155 is from the variable on line 154 and the second item is from the relationship between portfolio and cart item
     request.session['total_price'] = float(request.session['total_price']) - float(portfolio.price)*item.quantity
-    # we reduce the total price of the cart by the item and price and the quantity
     item.delete()
+    # we reduce the total price of the cart by the item and price and the quantity
+
     return redirect('/user/viewcart')
 
 
@@ -177,7 +179,7 @@ def view_cart(request):
     print("Working2")
     line_items = CartItem.objects.filter(cart = cart.id)
     print("Working3")
-    request.session['line_items'] = line_items
+    # request.session['line_items'] = line_items
     request.session['cart'] = cart.id
     request.session['total_price'] = float(cart.total_price)
     print("Working2.5")

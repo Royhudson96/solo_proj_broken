@@ -63,10 +63,10 @@ class PortfolioManager(models.Manager):
         errors = {}
         if len(reqPost['title']) < 2:
             errors['title'] = "Title must be at least 3 characters"
-        if not isinstance(reqPOST['price'], float):
+        if not isinstance(reqPost['price'], float):
             errors['price'] = "Please use digits and decimals only."
-        elif (reqPOST['price']).find(".")>0:
-            if len((reqPOST['price']).split(".")[1])!=2:
+        elif (reqPost['price']).find(".")>0:
+            if len((reqPost['price']).split(".")[1])!=2:
                 errors['price'] = "There should be two digits to the right of the decimal."
         return errors
 
